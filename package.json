@@ -1,0 +1,14 @@
+{
+  "name": "nuxt-bridge-middlewares",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nuxi dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge@3.0.1-28452354.e299e14",
+    "nuxi": "^3.10.0",
+    "nuxt": "^2.17.2"
+  }
+}
