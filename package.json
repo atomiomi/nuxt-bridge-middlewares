@@ -2,7 +2,7 @@
   "name": "nuxt-bridge-middlewares",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nuxi dev"
+    "start": "nuxi dev"
   },
   "author": "",
   "license": "ISC",

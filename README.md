@@ -1,9 +1,14 @@
-# Nitro aws-lambda preset query decoding issue
+# Nuxt bridge middlewares issue
 
-The problem is that when using aws-lambda preset, the handler function doesn't decode query values that is accepts as arguments.
+In nuxt bridge if you return navigateTo from a middleware, it doesn't break middleware chain, resulting in the next middleware to be called. Which causes error in some cases (for example root middleware checks user authentication and blocks access to a page).
 
 ## How to reproduce
 - Install dependencies: `npm ci`
 - Run the app: `npm start`
-- Go to http://localhost:3000/?email=email%40mail.com
-- In terminal you will see that the query value is not decoded: `QUERY { email: 'email%40mail.com' }`
+- Go to http://localhost:3000/
+- In terminal you will see that both middlewares are called, even though root returns result of `navigateTo()` utility.
+```
+>>> Root middleware called
+>>> Nested middleware called
+>>> Root middleware called
+```
